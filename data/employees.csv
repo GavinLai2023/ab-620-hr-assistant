@@ -1,0 +1,21 @@
+EmployeeId,Name,Department,ManagerId,AnnualLeaveBalance,SickLeaveBalance
+E001,Alice Chen,HR,,20,10
+E002,Ben Okafor,Engineering,E005,14,8
+E003,Carla Mendes,Sales,E010,9,10
+E004,Daniel Kim,Finance,E015,17,6
+E005,Elena Petrova,Engineering,E001,12,10
+E006,Farid Haddad,Engineering,E005,20,9
+E007,Grace Liu,Sales,E010,5,10
+E008,Hiro Tanaka,Engineering,E005,11,7
+E009,Isabel Romero,HR,E001,16,10
+E010,James Walker,Sales,E001,8,4
+E011,Keiko Sato,Finance,E015,19,10
+E012,Liam Murphy,Engineering,E005,3,10
+E013,Maya Singh,Sales,E010,13,9
+E014,Noah Fischer,Engineering,E005,20,10
+E015,Olivia Brown,Finance,E001,10,5
+E016,Pavel Novak,Engineering,E005,6,10
+E017,Qing Zhao,HR,E001,15,8
+E018,Rosa Alvarez,Sales,E010,18,10
+E019,Samuel Adeyemi,Finance,E015,7,10
+E020,Tara Nguyen,Engineering,E005,2,3

@@ -1,0 +1,30 @@
+{
+  "Engineering": [
+    "Laptop and accounts with the IT Helpdesk, then walk through the Onboarding Agent checklist with your manager",
+    "Development environment setup and access to the code repositories",
+    "Architecture overview session with a senior engineer",
+    "Pair programming on a starter ticket",
+    "Join sprint review and agree your first-month goals"
+  ],
+  "Finance": [
+    "Laptop and accounts with the IT Helpdesk, then walk through the Onboarding Agent checklist with your manager",
+    "Finance system access and expense approval workflow training",
+    "Month-end close process walkthrough",
+    "Shadow an accounts payable run",
+    "Review the quarterly budget pack with your manager"
+  ],
+  "HR": [
+    "Laptop and accounts with the IT Helpdesk, then walk through the Onboarding Agent checklist with your manager",
+    "HR system and employee records access",
+    "Leave and payroll policy deep dive",
+    "Shadow a new-hire induction session",
+    "Agree your first-month goals with the HR lead"
+  ],
+  "Sales": [
+    "Laptop and accounts with the IT Helpdesk, then walk through the Onboarding Agent checklist with your manager",
+    "CRM training and account territory overview",
+    "Product demo certification",
+    "Shadow customer calls with a senior account manager",
+    "Pipeline review and first-month targets with your manager"
+  ]
+}

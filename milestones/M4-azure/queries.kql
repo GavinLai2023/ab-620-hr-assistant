@@ -1,0 +1,135 @@
+// M4 Task 7: KQL queries for Copilot Studio → Application Insights
+// Resource: appi-hr-assistant (Logs, KQL mode). agent: HR Assistant Classic
+// Usage: queries are separated by blank lines; Run executes whichever block the cursor is in (no blank lines inside a block)
+// There are actually only 5 event types: BotMessageReceived / BotMessageSend / TopicStart / TopicAction / TopicEnd
+// customDimensions keys are case-sensitive: DesignMode, TopicName, Kind start with uppercase; conversationId, activityId, text start with lowercase
+
+// Q1 Count of each event type
+customEvents
+| where timestamp > ago(1d)
+| summarize count() by name
+| order by count_ desc
+
+// Q2 Test pane vs non-test pane (DesignMode = True is the test pane; channelId distinguishes channels)
+customEvents
+| where timestamp > ago(1d)
+| summarize count() by designMode = tostring(customDimensions.DesignMode), channel = tostring(customDimensions.channelId)
+
+// Q3a How many times each topic started and ended
+customEvents
+| where timestamp > ago(1d)
+| where name in ("TopicStart", "TopicEnd")
+| summarize starts = countif(name == "TopicStart"), ends = countif(name == "TopicEnd") by topic = tostring(customDimensions.TopicName)
+| order by starts desc
+
+// Q3b Which node types ran in each topic (check whether tool / flow nodes appear)
+customEvents
+| where timestamp > ago(1d)
+| where name == "TopicAction"
+| summarize count() by topic = tostring(customDimensions.TopicName), nodeKind = tostring(customDimensions.Kind)
+| order by topic asc, count_ desc
+
+// Q4 Failure clues: nothing had failed yet in Task 7, so I thought there was no dedicated error event and could only search indirectly (Task 10 verified hands-on that OnErrorLog exists, see Q14)
+// (a) Topics that started but didn't end within the same session
+customEvents
+| where timestamp > ago(1d)
+| where name in ("TopicStart", "TopicEnd")
+| summarize starts = countif(name == "TopicStart"), ends = countif(name == "TopicEnd") by conversationId = tostring(customDimensions.conversationId), topic = tostring(customDimensions.TopicName)
+| where starts != ends
+| order by conversationId asc
+
+// Q4 (b) Agent messages containing error or refusal wording
+customEvents
+| where timestamp > ago(1d)
+| where name == "BotMessageSend"
+| extend text = tostring(customDimensions.text)
+| where text matches regex @"(?i)error|sorry|can.t|cannot|unable|抱歉|无法|错误|不能"
+| project timestamp, conversationId = tostring(customDimensions.conversationId), text
+
+// Q5 Per-turn duration: message received → agent's first / last reply (BotMessageSend.replyActivityId = BotMessageReceived.activityId)
+let received = customEvents
+| where timestamp > ago(1d)
+| where name == "BotMessageReceived"
+| project rxTime = timestamp, activityId = tostring(customDimensions.activityId), type = tostring(customDimensions.type), userText = tostring(customDimensions.text);
+let sent = customEvents
+| where timestamp > ago(1d)
+| where name == "BotMessageSend"
+| summarize firstReply = min(timestamp), lastReply = max(timestamp), replies = count() by replyActivityId = tostring(customDimensions.replyActivityId);
+received
+| join kind=leftouter sent on $left.activityId == $right.replyActivityId
+| extend firstMs = datetime_diff('millisecond', firstReply, rxTime), lastMs = datetime_diff('millisecond', lastReply, rxTime)
+| project rxTime, type, userText, replies, firstMs, lastMs
+| order by rxTime asc
+
+// Q6 Timeline of a single session (for troubleshooting: fill in the problem session ID seen in Q5)
+customEvents
+| where timestamp > ago(1d)
+| where tostring(customDimensions.conversationId) == "<conversationId>"
+| project timestamp, name, topic = tostring(customDimensions.TopicName), nodeKind = tostring(customDimensions.Kind), text = tostring(customDimensions.text)
+| order by timestamp asc
+
+// Q7 Every message the agent sent, with replyActivityId and content (to find where the turns with no reply in Q5 went)
+customEvents
+| where timestamp > ago(1d)
+| where name == "BotMessageSend"
+| project timestamp, replyActivityId = tostring(customDimensions.replyActivityId), text = substring(tostring(customDimensions.text), 0, 60)
+| order by timestamp asc
+
+// Q8 Nodes in a topic that call outward (HTTP / flow / prompt) record two TopicActions each time; the time difference between them ≈ the call's duration
+// ActionId is the node's ID in the designer, not a per-call ID: two calls in the same session get mixed together, so pair them up in time order
+customEvents
+| where timestamp > ago(1d)
+| where name == "TopicAction"
+| extend nodeKind = tostring(customDimensions.Kind)
+| where nodeKind in ("HttpRequestAction", "InvokeFlowAction", "InvokeAIBuilderModelAction")
+| extend conversationId = tostring(customDimensions.conversationId), topic = tostring(customDimensions.TopicName), key = strcat(tostring(customDimensions.conversationId), "|", tostring(customDimensions.ActionId))
+| order by key asc, timestamp asc
+| extend rn = row_number(1, prev(key) != key), prevTime = prev(timestamp)
+| where rn % 2 == 0
+| project startTime = prevTime, conversationId, topic, nodeKind, callMs = datetime_diff('millisecond', timestamp, prevTime)
+| order by startTime asc
+
+// Q9 Row count per table (Copilot Studio writes more than just customEvents)
+union withsource = tableName *
+| where timestamp > ago(1d)
+| summarize count() by tableName
+
+// Q10 dependencies: count, success rate and average duration of the agent's outbound calls (tools, knowledge sources...)
+dependencies
+| where timestamp > ago(1d)
+| summarize calls = count(), failed = countif(success == false), avgMs = round(avg(duration), 0), maxMs = round(max(duration), 0) by type, target, name
+| order by calls desc
+
+// Q11 traces: only a few rows, list them all to see what they are
+traces
+| where timestamp > ago(1d)
+| project timestamp, severityLevel, message, customDimensions
+| order by timestamp asc
+
+// Q12 pageViews: count and average duration by name (guess: another record of topics, 34 rows exactly equals the 34 TopicStarts)
+pageViews
+| where timestamp > ago(1d)
+| summarize pageCount = count(), avgMs = round(avg(duration), 0) by name
+| order by pageCount desc
+
+// Q13 Which fields an MCP call carries: can you tell which MCP tool was called and which session it belongs to
+dependencies
+| where timestamp > ago(1d)
+| where name == "HR MCP Server"
+| project timestamp, duration, success, data, operation_Id, customDimensions
+| order by timestamp asc
+
+// Q14 Failure troubleshooting (Task 10): first use OnErrorLog to find the failed session and error message, then look up by session ID which call failed in dependencies
+let errs = customEvents
+| where timestamp > ago(1d)
+| where name == "OnErrorLog"
+| project errorTime = timestamp, conversationId = tostring(customDimensions.ConversationId), errorMessage = tostring(customDimensions.ErrorMessage), designMode = tostring(customDimensions.DesignMode);
+errs
+| join kind=leftouter (
+    dependencies
+    | where timestamp > ago(1d)
+    | where success == false
+    | project conversationId = tostring(customDimensions.conversationId), failedCall = name, target, resultCode, duration
+  ) on conversationId
+| project errorTime, conversationId, designMode, errorMessage, failedCall, target, resultCode, duration
+| order by errorTime desc

@@ -1,0 +1,123 @@
+openapi: 3.0.3
+info:
+  title: Employee API
+  version: 1.0.0
+  description: Mock HR employee directory and leave balance API for the HR Assistant project.
+servers:
+  # Replace with the hr-employee-api tunnel (port 3000) URL before importing; in Power Platform the host comes from env var chr_EmployeeApiBaseUrl.
+  - url: http://localhost:3000
+security:
+  - ApiKeyAuth: []
+paths:
+  /employees:
+    get:
+      operationId: listEmployeesByDepartment
+      summary: List employees in a department
+      description: Returns all employees whose Department matches the given value. Use this when the user asks who works in a specific department.
+      parameters:
+        - name: department
+          in: query
+          required: true
+          description: The department name to filter by, such as HR, Engineering, Sales or Finance. Matching is case-insensitive.
+          schema:
+            type: string
+          example: Engineering
+      responses:
+        '200':
+          description: Matching employees
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+        '400':
+          description: Missing department parameter
+  /employees/{id}:
+    get:
+      operationId: getEmployeeById
+      summary: Get one employee's profile by employee id
+      description: Returns name, department and manager for a single employee, identified by their EmployeeId (e.g. E001). Use this when the user asks about one specific employee.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The employee's EmployeeId, in the format E followed by three digits (e.g. E001). If the user has not given an id, ask them for it.
+          schema:
+            type: string
+          example: E001
+      responses:
+        '200':
+          description: The employee record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '404':
+          description: No employee with that id
+  /employees/{id}/leave:
+    get:
+      operationId: getEmployeeLeaveBalance
+      summary: Get one employee's current leave balances
+      description: Returns the employee's remaining annual and sick leave days. Use this when the user asks how many leave days they or someone else has left.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The employee's EmployeeId, in the format E followed by three digits (e.g. E002). If the user has not given an id, ask them for it.
+          schema:
+            type: string
+          example: E001
+      responses:
+        '200':
+          description: Leave balances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeaveBalance'
+        '404':
+          description: No employee with that id
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+  schemas:
+    Employee:
+      type: object
+      properties:
+        EmployeeId:
+          type: string
+          description: The employee's id.
+        Name:
+          type: string
+          description: The employee's full name.
+        Department:
+          type: string
+          description: The department the employee belongs to.
+        ManagerId:
+          type: string
+          description: The EmployeeId of this employee's manager. Empty if the employee has no manager.
+        AnnualLeaveBalance:
+          type: integer
+          format: int32
+          description: Remaining annual leave days for this employee.
+        SickLeaveBalance:
+          type: integer
+          format: int32
+          description: Remaining sick leave days for this employee.
+    LeaveBalance:
+      type: object
+      properties:
+        EmployeeId:
+          type: string
+          description: The employee's id, echoed back from the request.
+        AnnualLeaveBalance:
+          type: integer
+          format: int32
+          description: Remaining annual leave days for this employee.
+        SickLeaveBalance:
+          type: integer
+          format: int32
+          description: Remaining sick leave days for this employee.
