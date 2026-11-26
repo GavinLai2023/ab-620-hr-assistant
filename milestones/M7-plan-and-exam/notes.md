@@ -213,15 +213,15 @@ All three are met, so per the plan I can book. **The PA hasn't reached 80% and I
 
 ## Exam result (2026-11-26)
 
-**Passed: 788 / 1000** (pass mark 700). OnVUE at home.
+**Passed.** OnVUE at home.
 
-| Domain | Weighting | My estimated score |
+| Domain | Weighting | How it went |
 |---|---|---|
-| Plan and configure agent solutions | 30–35% | 80-something % |
-| Integrate and extend agents in Copilot Studio | 40–45% | 80-something % |
-| Test and manage agents | 20–25% | **Lowest, about 60–70%** |
+| Plan and configure agent solutions | 30–35% | Stronger |
+| Integrate and extend agents in Copilot Studio | 40–45% | Stronger |
+| Test and manage agents | 20–25% | **Weakest** |
 
-- In the PA, Test was always the strongest (PA4 about 94%), but in the real exam it was the lowest. Integrate was the weakest in the PA (about 68%) but reached the 80s in the real exam, which shows the paired remediation questions of the last few days really worked.
+- In the PA, Test was always the strongest (PA4 about 94%), but in the real exam it was the lowest. Integrate was the weakest in the PA (about 68%) but was one of the stronger domains in the real exam, which shows the paired remediation questions of the last few days really worked.
 
 ## Concepts learned (each answers: what problem it solves, and when not to use it)
 
