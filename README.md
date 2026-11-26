@@ -8,7 +8,7 @@ Design doc: `docs/superpowers/specs/2026-09-13-ab-620-hr-assistant-design.md`
 
 ## Current milestone
 
-All done. Passed AB-620 on 2026-11-26 with 788 / 1000 (OnVUE at home).
+All done. Passed AB-620 on 2026-11-26.
 
 ## Milestones
 
