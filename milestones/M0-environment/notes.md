@@ -11,7 +11,7 @@ Build, in one go, the foundation that M1 to M7 will need: a Power Platform envir
 - Created the SharePoint site **HR Policies** and uploaded 4 policy documents (annual leave, sick leave, remote work, expenses)
 - Created the Dataverse table **Employee** from `data/employees.csv`, 20 rows
 - Created an empty agent **HR Assistant** in Copilot Studio; the test pane can hold a conversation
-- Pushed the project repo to a GitHub private repo (the original was later renamed; this English public copy now lives at https://github.com/GavinLai2023/ab-620-hr-assistant)
+- Pushed the project repo to a GitHub private repo (the original was later renamed; this public copy now lives at https://github.com/GavinLai2023/ab-620-hr-assistant)
 
 ### Dataverse table Employee (created 2026-09-16)
 

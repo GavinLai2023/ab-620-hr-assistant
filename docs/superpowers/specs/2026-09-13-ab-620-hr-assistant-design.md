@@ -16,7 +16,7 @@ Status: awaiting user review
 3. **The learning loop is fixed as**: Learn → build it myself → break it on purpose → Troubleshoot → record → back to Learn. Every milestone includes a "break it on purpose" step.
 4. **Timebox and move on**. If any single feature is stuck for more than 1 hour, read the docs, write a note, mark Understand in the coverage table, and keep going.
 
-**Constraints**: 7–8 hours a week; no fixed exam date; costs mainly free and trial, small amounts acceptable after the trials; notes in Chinese prose with English terms.
+**Constraints**: 7–8 hours a week; no fixed exam date; costs mainly free and trial, small amounts acceptable after the trials.
 
 ## 2. Project definition and repo structure
 
@@ -46,7 +46,7 @@ Status: awaiting user review
 C:\Projects\Certifications\
   README.md                  project overview, current milestone, environment status and expiry dates
   docs/
-    exam-outline.md          official exam objectives, English-Chinese, one row per bullet
+    exam-outline.md          official exam objectives, one row per bullet
     coverage.md              four-column coverage table
     superpowers/specs/       design docs (this file)
     superpowers/plans/       implementation plans
@@ -257,7 +257,7 @@ Every bullet has at least one milestone; nothing is missing.
 3. The user writes observations into `notes.md` and `break-and-fix.md`; Claude helps fill gaps, correct mistakes and standardize terminology.
 4. End of milestone: tick `checklist.md`, update `docs/coverage.md`, update the environment expiry table in the README, git commit.
 
-**Notes conventions**: Chinese prose, English terms left untranslated on first appearance; each note tries to answer "what problem does this feature solve, and when should I not use it"; screenshots are not committed, only text is recorded.
+**Notes conventions**: each note tries to answer "what problem does this feature solve, and when should I not use it"; screenshots are not committed, only text is recorded.
 
 **Timebox rule**: if a single feature is stuck for more than 1 hour (1.5 hours for Pipelines), stop, record it in `break-and-fix.md`, mark Understand in the coverage table, and move on.
 

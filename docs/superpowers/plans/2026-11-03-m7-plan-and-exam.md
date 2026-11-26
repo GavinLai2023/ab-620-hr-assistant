@@ -15,7 +15,6 @@
 
 ## Global Constraints
 
-- Notes body in Chinese; English terms are not translated on first appearance.
 - **Things found while writing the plan (2026-11-03) that differ from the design doc:**
   1. **The Practice Assessment is already live**, but not on Learn: it's on the AB-620 certification page in AI Skills Navigator, and you have to sign in to start (entry point in the Tip at the top of the [study guide](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-620)).
   2. **The AB-620T00 course is already live** (3-day instructor-led course; the self-paced version has 5 learning paths, about 72 hours total). 72 hours exceeds M7's budget, so read only the parts related to the planning domain, not as a systematic review.
@@ -215,7 +214,7 @@ git commit -m "M7: build external careers agent and record DLP experiment"
   | C | 23-37 |
   | D | 38-44, plus the 6 questions from readiness criterion 3 |
 
-  For each bullet AI asks two questions: **What problem does it solve? When should it not be used (or what is it easily confused with)?** The user answers in the chat in Chinese without looking at notes, ideally with an HR Assistant example. AI grades on the spot: both halves right is "pass", only half right is recorded as "again" with a one-sentence explanation added, all wrong is recorded as "don't know".
+  For each bullet AI asks two questions: **What problem does it solve? When should it not be used (or what is it easily confused with)?** The user answers in the chat without looking at notes, ideally with an HR Assistant example. AI grades on the spot: both halves right is "pass", only half right is recorded as "again" with a one-sentence explanation added, all wrong is recorded as "don't know".
 
   The 6 questions from readiness criterion 3: how to choose between knowledge, topic and tool; the differences and use cases of REST tool, custom connector and MCP; the difference between MCP and A2A; the relationship between Copilot Studio agents and Foundry agents; whose identity an agent uses to access systems; what problem each of solution, environment variable and pipeline solves.
 

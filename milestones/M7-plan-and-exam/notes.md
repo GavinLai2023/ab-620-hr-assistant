@@ -85,7 +85,7 @@ HR Assistant in M1–M6 is all standard. The study guide is still the 2026-04-09
 
 ### Task 5: Scenario questions and Practice Assessment (2026-11-14 to 11-18)
 
-**Scenario questions 18 / 20** (details in `scenario-questions.md`): Plan 7/7, Integrate 8/9, Test 3/4. Missed question 8 (bullet 23) and question 19 (bullet 42). The questions were in Chinese, so I didn't practise reading English.
+**Scenario questions 18 / 20** (details in `scenario-questions.md`): Plan 7/7, Integrate 8/9, Test 3/4. Missed question 8 (bullet 23) and question 19 (bullet 42).
 
 **Practice Assessment attempt 1 (2026-11-15, not signed in):**
 
@@ -98,7 +98,7 @@ HR Assistant in M1–M6 is all standard. The study guide is still the 2026-04-09
 | Test and manage (20–25%) | About 80% |
 
 - Did it in one go without clicking "Check your answer"; not signed in, so once the score page was closed I couldn't see the missed questions, and **I didn't get the topics I got wrong**.
-- **Time is the second weak spot**: the real exam is 120 minutes for about 40–60 questions, so I need to get down to about 2 minutes per question, and leave a margin for the case study and looking things up on Learn. Decided to take the English version (a Chinese version exists, so I can't get the 30-minute extension).
+- **Time is the second weak spot**: the real exam is 120 minutes for about 40–60 questions, so I need to get down to about 2 minutes per question, and leave a margin for the case study and looking things up on Learn.
 - Next step: before Task 6, **sign in** and do it again in **study mode**: answer each question first, then click "Check your answer" to see the explanation, and note the topics I got wrong and why (didn't know / misread). No speed test this time. Fill in the Ready column after attempt 2's results.
 - Before booking, find time for a **timed mock exam** (no looking at answers, target ≥ 80%, ≤ 100 minutes) to train speed specifically.
 
@@ -132,7 +132,7 @@ HR Assistant in M1–M6 is all standard. The study guide is still the 2026-04-09
 
 ### Task 6: Remediation, readiness check, wrap-up (2026-11-18 to 11-21)
 
-**Remediation (Step 1)**: for the 21 bullets with Ready still empty after Task 5 (2, 5, 6, 8, 9, 10, 13, 15, 23, 25, 29, 30, 31, 33, 35, 36, 37, 38, 39, 42, 44), AI wrote English questions in new scenarios, 26 questions over 8 rounds, all answered correctly, **Ready 44 / 44**.
+**Remediation (Step 1)**: for the 21 bullets with Ready still empty after Task 5 (2, 5, 6, 8, 9, 10, 13, 15, 23, 25, 29, 30, 31, 33, 35, 36, 37, 38, 39, 42, 44), AI wrote questions in new scenarios, 26 questions over 8 rounds, all answered correctly, **Ready 44 / 44**.
 
 - Bullet 25: missed the first question (took Entra ID Integrated as "doesn't depend on the maker"); the second question was flawed (the stem only banned the admin key, so a query key was also compliant) and didn't count; got the third right.
 - Bullet 38: missed twice in a row, both times picking Compare meaning for a conversational test set. After it was explained as "a written exam (has a model answer) vs an interview (no line-by-line model answer)", I got the next two right. Mnemonic: **for a conversational test set, anything with "compare" in it is out** (Exact match, Text similarity, Compare meaning).
@@ -169,7 +169,7 @@ All three are met, so per the plan I can book. **The PA hasn't reached 80% and I
   - Added: Create and manage skills; Configure agent identity, instructions, and behavior (memory, model selection); Connect to Foundry IQ / Fabric IQ; Evaluate AI model candidates. Agent flow is renamed workflow.
 - **Conclusion: taking it before 12-18 still tests the 44 bullets we reviewed (standard harness version).** Slipping past 12-18 means reviewing a whole new set, so 11-28 is a suitable date. If I fail, I can retake after 24 hours, and there's still a retake window before 12-18.
 - Note: the study guide says the AI Skills Navigator PA "more closely aligns with the exam experience". PA attempt 2 already had GitHub Copilot harness questions, so the question bank may mix in new-version content. If I hit questions on skills, memory, Foundry IQ and the like, no need to panic if I get them wrong.
-- Booking (I use my personal MSA account, OnVUE at home): on 2026-11-22 I booked **the evening of 2026-11-26**, language **Simplified Chinese**: reading questions in English is too slow, time would be tight, and the error rate would go up. The PA has no Chinese version, so I practise in English and sit the exam in Chinese; key terms need to map between English and Chinese. I took the slot before the timed mock exam, because rescheduling more than 24 hours before the start is free. README only records the date.
+- Booking (I use my personal MSA account, OnVUE at home): on 2026-11-22 I booked **the evening of 2026-11-26**. I took the slot before the timed mock exam, because rescheduling more than 24 hours before the start is free. README only records the date.
 
 **Practice Assessment attempt 3 (2026-11-21)**: **79%** (target 80%). Still study mode, clicking "Check your answer" question by question, not timed, and not split into "seen / not seen", so it can't count as the timed mock exam. Bar chart estimates: Plan about 82%, Integrate about 71%, Test about 79%. The three attempts were 78%, about 76%, 79%, **stuck around 78–79%**. Integrate was the weakest all three times, and has the heaviest weighting (40–45%).
 
@@ -188,7 +188,7 @@ All three are met, so per the plan I can book. **The PA hasn't reached 80% and I
 - Got right, worth noting: Copilot connector (must be searchable in Microsoft Search) and real-time knowledge (data stays in the source system, always changing) are a pair: same data source, opposite answers; a computer use session status showing In progress can't be trusted, verify with **transcript mode** (this item on the to-verify list counts as found); for A2A you enter the **communication endpoint**, not the agent card, and choose OAuth 2.0 authentication per the parameters the other side gives.
 - The questions' Objective numbers (1.3 Configure topics, 2.1 Connect to enterprise knowledge sources) are the old exam objective groupings, which shows this PA question bank is still mainly the old version.
 
-**PA3 missed-question remediation (2026-11-22): 21 / 21.** I wrote my own English questions; within each group the stems differ by only one keyword, forcing me to spot the cues:
+**PA3 missed-question remediation (2026-11-22): 21 / 21.** I wrote my own questions; within each group the stems differ by only one keyword, forcing me to spot the cues:
 
 | Group | bullet | Questions | Discriminator cues |
 |---|---|---|---|
@@ -213,7 +213,7 @@ All three are met, so per the plan I can book. **The PA hasn't reached 80% and I
 
 ## Exam result (2026-11-26)
 
-**Passed: 788 / 1000** (pass mark 700). OnVUE at home, Simplified Chinese.
+**Passed: 788 / 1000** (pass mark 700). OnVUE at home.
 
 | Domain | Weighting | My estimated score |
 |---|---|---|
@@ -222,8 +222,6 @@ All three are met, so per the plan I can book. **The PA hasn't reached 80% and I
 | Test and manage agents | 20–25% | **Lowest, about 60–70%** |
 
 - In the PA, Test was always the strongest (PA4 about 94%), but in the real exam it was the lowest. Integrate was the weakest in the PA (about 68%) but reached the 80s in the real exam, which shows the paired remediation questions of the last few days really worked.
-- **The translation of the Chinese exam paper was the biggest obstacle.** Reading the questions was very hard work; for example connector and connection: their Chinese names are hard to tell apart at a glance, and during the exam I couldn't recall which English term each one maps to. Test and manage has the densest ALM and evaluation terminology (connection reference (Chinese: 连接引用), environment variable (Chinese: 环境变量), pipeline (Chinese: 管道), test set (Chinese: 测试集), grader / test method (Chinese: 评分方法)), so translation probably hurt it the most.
-- Lesson for next time: taking the exam in your native language means faster reading, at the cost of **terms not matching up**. If taking it in Chinese, build an English-Chinese glossary at least a week ahead, and **practise with the wording the exam paper is likely to use**, not just look at it the day before. Learn's Chinese pages are mostly machine-translated and won't necessarily match the exam's wording. The PA has no Chinese version, so this is hard to practise in advance.
 
 ## Concepts learned (each answers: what problem it solves, and when not to use it)
 
@@ -1751,7 +1749,7 @@ So: a Copilot Studio connected agent can run evaluations and compare content; a 
 | Method | Don't use for | M6 example |
 |---|---|---|
 | General quality | Refusal questions | A correct refusal judged "Not answered" |
-| Compare meaning | Reply language differs from the expected answer | Submit Leave replied in Chinese "What is your employee ID?", expected answer written in English → 0 points |
+| Compare meaning | Reply language differs from the expected answer | Submit Leave replied in Chinese (asking for the employee ID), expected answer written in English → 0 points |
 | Keyword match | The same meaning can be phrased several ways | The carry-over question expected "March 31", keyword didn't match, 0 points; Meaning 100 points |
 | Exact match | Any generative answer | Only 2 of 30 questions passed (both Password Reset's fixed prompts) |
 
@@ -1789,7 +1787,7 @@ So: a Copilot Studio connected agent can run evaluations and compare content; a 
 |---|---|---|---|
 | ① Environment / platform | The evaluation itself errored; no reply was obtained | Both Foundry summariser questions Error, fine in Test chat | Verify another way (Test chat, Activity) |
 | ② Method not suitable | The reply is right; this method can't measure it | Refusal question judged "Not answered" by General quality; "March 31" didn't match Keyword | Change the grader |
-| ③ Question written wrong | The expected answer itself is wrong | Submit Leave expected answer in English, actual reply in Chinese "What is your employee ID?" | Fix the test set |
+| ③ Question written wrong | The expected answer itself is wrong | Submit Leave expected answer in English, actual reply in Chinese (asking for the employee ID) | Fix the test set |
 | ④ The agent is really wrong | The reply genuinely isn't good | E004 only replied `AL: 17; SL:6` | Fix the agent, rerun |
 
 Special case: the anti-injection question was Error, with details `ContentFiltered`: content filtering blocked the attack (a good thing), but the evaluation counted it as Error.

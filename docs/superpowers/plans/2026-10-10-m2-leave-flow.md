@@ -12,7 +12,6 @@
 
 ## Global Constraints
 
-- Notes are written in Chinese prose; English terms are left untranslated on first use.
 - **The Copilot Studio trial expires on 2026-10-16. Today is 2026-10-10, so only 6 days are left**, but M2's original budget is 2 weeks, 12-14 hours. Per the M0 notes, the agent keeps running for 90 days after expiry, but whether topics can still be edited / new flows created is unverified. Recommendation: squeeze Tasks 1-4 (create the table, build `SubmitLeaveRequest`, wire it into a topic) in before expiry where possible; if they can't be finished in time, on expiry day first verify whether editing still works, then decide whether to switch to pay-as-you-go early (see the services table in the README). This is a schedule risk the user needs to watch; this plan can't solve it on its own.
 - M2 doesn't use Azure and costs nothing extra: agent flows, Dataverse and Approvals all live in the `HR-Dev` Developer environment and use standard connectors.
 - If any single step is stuck for more than 1 hour, stop, log it in `milestones/M2-leave-flow/break-and-fix.md`, and move on to the next step.

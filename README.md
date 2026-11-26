@@ -4,11 +4,11 @@ Goal: pass Microsoft Exam AB-620 and earn Microsoft Certified: AI Agent Builder 
 Approach: one end-to-end HR Assistant project that covers all 44 bullets of the official exam objectives.
 Design doc: `docs/superpowers/specs/2026-09-13-ab-620-hr-assistant-design.md`
 
-> **Disclaimer.** This is a personal study project. It is not affiliated with or endorsed by Microsoft. It contains no exam questions and no Practice Assessment question text: only my own notes, scores and the topics I missed. All employee and HR data is fictional, and the tenant name has been replaced with `contoso`. The notes were originally written in Chinese and translated into English for this public copy. The agent itself also answered in Chinese, so in `test-sets/results/` the replies are translated, while some grader explanations still mention that the reply was in Chinese.
+> **Disclaimer.** This is a personal study project. It is not affiliated with or endorsed by Microsoft. It contains no exam questions and no Practice Assessment question text: only my own notes, scores and the topics I missed. All employee and HR data is fictional, and the tenant name has been replaced with `contoso`.
 
 ## Current milestone
 
-All done. Passed AB-620 on 2026-11-26 with 788 / 1000 (OnVUE at home, taken in Simplified Chinese).
+All done. Passed AB-620 on 2026-11-26 with 788 / 1000 (OnVUE at home).
 
 ## Milestones
 

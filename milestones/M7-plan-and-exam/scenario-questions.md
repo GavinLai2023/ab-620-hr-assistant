@@ -10,7 +10,7 @@ AI wrote the questions and the user answered without looking anything up, split 
 | Integrate and extend (8–16) | 8 / 9 |
 | Test and manage (17–20) | 3 / 4 |
 
-Missed: 🔴 Q8 (bullet 23), 🔴 Q19 (bullet 42). Both were answered correctly in the English questions re-set with new scenarios in Task 6, so they are remediated (2026-11-18).
+Missed: 🔴 Q8 (bullet 23), 🔴 Q19 (bullet 42). Both were answered correctly in the questions re-set with new scenarios in Task 6, so they are remediated (2026-11-18).
 
 ---
 

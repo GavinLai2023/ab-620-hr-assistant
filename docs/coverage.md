@@ -64,7 +64,7 @@ Explain column count met / 44. Reaching 36 (80%) with no all-empty domain among 
 
 Ready column (2026-11-18, after M7 Task 5): Explain has an `x`, and I got neither a wrong nor a half-right answer on the scenario questions and the second Practice Assessment. **23 / 44**: Plan and configure 14 / 22, Integrate and extend 6 / 15, Test and manage 3 / 7. Bullets with an `x` in Explain that I got wrong this time and so didn't make Ready: 2, 6, 9, 10, 23, 25, 31.
 
-Ready column (2026-11-18, after M7 Task 6 remediation): all 21 remediation questions answered correctly (English questions re-asked with new scenarios; 25 and 38 each took one retake to pass), **Ready 44 / 44**. Note: 14 of them (5, 8, 13, 15, 29, 30, 33, 35, 36, 37, 38, 39, 42, 44) I can only answer questions on; Explain hasn't passed yet, so Explain is still 30 / 44.
+Ready column (2026-11-18, after M7 Task 6 remediation): all 21 remediation questions answered correctly (questions re-asked with new scenarios; 25 and 38 each took one retake to pass), **Ready 44 / 44**. Note: 14 of them (5, 8, 13, 15, 29, 30, 33, 35, 36, 37, 38, 39, 42, 44) I can only answer questions on; Explain hasn't passed yet, so Explain is still 30 / 44.
 
 Explain column (2026-11-20, after M7 Task 6 round E): all 8 spoken explanations passed (13, 29, 37, 39, 44 passed on the second try), **Explain 38 / 44**, meeting readiness criterion 1 (≥ 36). The 6 still not explained aloud: 5, 8, 15, 33, 35, 36 (I can answer questions on all of them; Ready has an `x`).
 

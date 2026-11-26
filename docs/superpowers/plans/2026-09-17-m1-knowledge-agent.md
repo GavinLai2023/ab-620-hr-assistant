@@ -12,7 +12,6 @@
 
 ## Global Constraints
 
-- Notes in Chinese prose; English terms left untranslated on first appearance.
 - No Azure and no spending in M1. The Copilot Studio trial expires 2026-10-16, so M1 must be finished before then.
 - A trial license **can't publish agents**; M1 is verified entirely in the Test pane, with no channel published.
 - If any single step is stuck for more than 1 hour, stop, record it in `milestones/M1-knowledge-agent/break-and-fix.md`, and move on to the next step.

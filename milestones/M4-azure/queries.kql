@@ -43,7 +43,7 @@ customEvents
 | where timestamp > ago(1d)
 | where name == "BotMessageSend"
 | extend text = tostring(customDimensions.text)
-| where text matches regex @"(?i)error|sorry|can.t|cannot|unable|抱歉|无法|错误|不能"
+| where text matches regex @"(?i)error|sorry|can.t|cannot|unable"
 | project timestamp, conversationId = tostring(customDimensions.conversationId), text
 
 // Q5 Per-turn duration: message received → agent's first / last reply (BotMessageSend.replyActivityId = BotMessageReceived.activityId)

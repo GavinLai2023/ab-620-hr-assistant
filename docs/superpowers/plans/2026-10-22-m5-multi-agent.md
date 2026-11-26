@@ -16,7 +16,6 @@
 
 ## Global Constraints
 
-- Notes body in Chinese; English terms are left untranslated on first appearance.
 - The main agent is always `HR Assistant Classic`, environment `HR-Dev`.
 - **Three things found while writing the plan (2026-10-22) that differ from the design doc:**
   1. **The Fabric trial doesn't support data agents.** [Features by SKU](https://learn.microsoft.com/en-us/fabric/enterprise/fabric-features) says: "Unless otherwise noted, a trial capacity doesn't support any of these features", and Fabric data agent is in the list with no footnote. Data agents need a paid F2 or higher capacity. So the design doc's "start a Fabric trial" route doesn't work, and in Task 1 the user picks one of two routes (see Task 1 Step 3).
